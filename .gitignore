@@ -1,0 +1,7 @@
+node_modules
+.vagrant
+etc/assets/design
+public/site/assets/cache/
+public/site/assets/logs/
+public/site/assets/sessions/
+public/site/config.php
