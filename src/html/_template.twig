@@ -1,0 +1,29 @@
+{% import 'partials/_macros.twig' as siteMacros %}
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{ page.title|raw }}</title>
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900" rel="stylesheet">
+		<link rel="stylesheet" href="{{ config.urls.templates }}stylesheets/app.css">
+		{% block head %}{% endblock %}
+	</head>
+	<body class="fade-out">
+		<noscript>This site requires Javascript. Please enable Javascript in your browser for this site.</noscript>
+		<div class="uk-offcanvas-content">
+			{% include "partials/_site-header.twig" %}
+			<main >{% block content %}{% endblock %}</main>
+			{% include "partials/_site-footer.twig" %}
+			{% include "partials/_off-canvas.twig" %}
+		</div>
+
+		<script src="{{ config.urls.templates }}javascripts/app.js"></script>
+		{# <script src="/javascripts/app.js"></script> #}
+		{% block javascript %}{% endblock %}
+	</body>
+</html>
+{% endspaceless %}

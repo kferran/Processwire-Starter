@@ -1,0 +1,24 @@
+<header class="site-header">
+    <div class="uk-container uk-padding-small">
+        <nav class="uk-navbar-container" data-uk-navbar>
+            <div class="uk-navbar-left">
+                <a class="uk-navbar-item" href="/">
+                    <img src="{{ config.urls.templates }}images/logo.svg">
+                </a>
+            </div>
+            <div class="uk-navbar-right uk-hidden@m">
+                <a class="uk-link-text" href="#" uk-toggle="target: #offcanvas-menu">
+                    <span data-uk-icon="icon: menu; ratio: 2"></span>
+                </a>
+            </div>
+            <div class="uk-navbar-right uk-visible@m">
+                {% set menu = modules.get('MarkupMenuBuilder') %}
+                {{ menu.render('Main', {
+                    'wrapper_list_type': 'ul',
+                    'menu_css_class': 'uk-navbar-nav',
+                    'current_class': 'uk-active'
+                })|raw }}
+            </div>
+        </nav>
+    </div>
+</header>
